@@ -1,6 +1,6 @@
-# CoopDB — Proyecto integrado (Integrantes 1, 2, 3 y 4)
+# CoopDB  Proyecto integrado
 
-Este paquete reúne los entregables recibidos de los cuatro integrantes en una estructura única y agrega un orden de instalación. No reemplaza ni reescribe los módulos de los compañeros: conserva sus scripts, aplicaciones y manuales originales en sus carpetas.
+
 
 ## Estructura
 - `sql/01_Estructura_Base_Datos`: estructura, catálogos y validaciones.
