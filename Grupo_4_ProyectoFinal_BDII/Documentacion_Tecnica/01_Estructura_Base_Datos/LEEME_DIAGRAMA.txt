@@ -1,3 +1,0 @@
-DER_CoopDB.png es la nueva version visual azul sin el titulo superior.
-DER_Tecnico_Original.svg y .dot se conservan como diagramas tecnicos de la version anterior y NO corresponden exactamente a la nueva ilustracion.
-Para verificar nombres de campos, llaves y relaciones vigentes, prevalece sql/00_crear_estructura.sql.
