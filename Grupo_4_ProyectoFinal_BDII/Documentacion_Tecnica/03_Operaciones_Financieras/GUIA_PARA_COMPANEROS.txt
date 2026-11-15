@@ -1,0 +1,17 @@
+COOPDB - INTEGRANTE 3 | OPERACIONES FINANCIERAS Y TRANSACCIONES
+
+Equipo: conservar la base y DER del integrante 1; no volver a crear las tablas si ya se usa una BD compartida.
+REQUISITOS: MySQL 8.0+ con tablas InnoDB, scripts de integrante 1 y seguridad de integrante 2 instalados.
+
+ORDEN SQL (como administrador en Workbench):
+20_operaciones_ahorro.sql
+21_prestamos.sql
+22_vistas_reportes.sql
+23_permisos_servicio.sql (reemplazar contraseña ejemplo)
+24_datos_demo_y_pruebas.sql (SOLO UNA VEZ en ambiente de prueba)
+25_verificaciones_acid.sql
+
+Para evidencia: capturas de saldos, movimientos, transferencia, préstamo/cuotas, pago, errores por fondos insuficientes, aislamiento en DOS CONEXIONES, durabilidad tras reinicio y bitácora del integrante 2.
+Aplicación consola opcional: app/CoopDB.Finanzas, ver README_INICIO.md.
+No introducir datos ni claves reales en capturas o ZIP.
+No se verificó la ejecución en MySQL ni en .NET en este entorno: deben correr las pruebas en su equipo.

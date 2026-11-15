@@ -1,0 +1,23 @@
+INFORME TÉCNICO  INTEGRANTE 4
+Carga masiva, ETL y tabla histórica
+
+Fuentes de datos
+La primera fuente es un CSV de 1,200 registros de asociados. La segunda es un libro Excel de 1,200 filas con el catálogo de apertura de cuentas, que relaciona cada asociado con número de cuenta, agencia, tipo de cuenta y estado.
+
+Extracción y transformación
+El programa Python lee ambos archivos. Normaliza nombres y códigos, convierte correos a minúsculas, elimina espacios redundantes, convierte fechas al tipo DATE y valida estados, IDs, formato de correo y referencias a agencias y tipos de cuenta existentes.
+
+Carga
+Los datos aceptados pasan por tablas staging. Luego se insertan o actualizan registros identificados por prefijos ETL en las tablas principales asociados y cuentas. Las cuentas se crean con saldo cero. No se crean movimientos ficticios ni se alteran saldos. El script cifra en MySQL un identificador DPI ficticio generado exclusivamente para pruebas y guarda su hash SHA-256; no utiliza DPI reales.
+
+Rechazos
+Cada registro que no supera las validaciones se registra en etl_rechazos con fuente, número de fila, clave de origen, motivo y contenido JSON del registro.
+
+Tabla histórica
+Se crea etl_historico_cuentas mediante CREATE TABLE AS SELECT, tomando asociados, cuentas, agencias y tipos de cuenta del lote ETL.
+
+Meta de volumen
+Los archivos contienen 1,200 filas cada uno. La ejecución comprueba que existan al menos 1,000 asociados y cuentas válidos y muestra los conteos reales. Los resultados solo se consideran comprobados después de ejecutar el ETL y consultar los conteos en MySQL.
+
+Precaución
+La carga se mantiene separada de las operaciones monetarias. Depósitos, retiros, transferencias y préstamos deben seguir usando los procedimientos transaccionales del integrante 3.
