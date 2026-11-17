@@ -34,7 +34,7 @@ Compilar cada .csproj con .NET 8 en Windows. Asociados es WinForms; Seguridad y 
 4. Datos demo
 Revisar primero 03_Operaciones_Financieras/24_datos_demo_y_pruebas.sql. Ejecutarlo solo en una base de pruebas vacía o después de comprobar que las referencias no se hayan usado. Algunas referencias son únicas y una segunda ejecución puede fallar por duplicidad.
 
-5. Pruebas y evidencia
+5.Pruebas
 Ejecutar los archivos de pruebas de forma separada. Para aislamiento, abrir dos conexiones Workbench y usar el mismo ID de cuenta de demostración. Mantener abierta la sesión A mientras se ejecuta el SELECT ... FOR UPDATE en B; documentar espera y liberación.
 Para rollback, provocar el retiro superior al saldo en una cuenta demo, comprobar que no se insertó movimiento y que el saldo no cambió.
 Para durabilidad, confirmar una operación, reiniciar el servicio MySQL de pruebas y consultar nuevamente el movimiento y saldo.
@@ -42,6 +42,3 @@ Para backup, usar backup/backup_restauracion.ps1 y capturar la restauración en 
 
 6. BI
 Ejecutar 05_Dashboards_BI/30_vistas_dashboards.sql. Conectar Power BI a MySQL y usar las vistas v_bi_* indicadas en el manual. Agregar segmentador por agencia y período; guardar el .pbix y capturas.
-
-7. Entrega
-Incluir el código, SQL, fuentes CSV/XLSX, manuales, informe, archivo .pptx, archivo .pbix, video MP4 y evidencias. El video y los resultados de ejecución solo pueden completarse por el equipo, porque dependen de su instalación y participación.
